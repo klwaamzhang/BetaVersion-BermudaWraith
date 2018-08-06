@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1283886827728406}
+  m_IsPrefabAsset: 1
+--- !u!1 &1283886827728406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4256164727483738}
+  - component: {fileID: 68576096748579748}
+  - component: {fileID: 114281997696944764}
+  m_Layer: 0
+  m_Name: DieEdge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4256164727483738
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283886827728406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 162.03154, y: -3.7316296, z: -1.369976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &68576096748579748
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283886827728406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -158.65878, y: -5.1228876}
+  - {x: -132.97093, y: -4.9450445}
+  - {x: -128.43143, y: -4.9958973}
+  - {x: -125.75877, y: -17.399576}
+  - {x: -112.41765, y: -17.49344}
+  - {x: -86.14461, y: -16.422344}
+  - {x: -76.43368, y: -16.261127}
+  - {x: -10.719009, y: -6.5306597}
+  - {x: -10.57692, y: -8.167583}
+  - {x: -7.091339, y: -8.261869}
+  - {x: 8.10051, y: -8.310462}
+  - {x: 10.368774, y: -7.8085146}
+  - {x: 33.107178, y: -6.999406}
+  - {x: 61.73526, y: -7.3687544}
+--- !u!114 &114281997696944764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283886827728406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed02bd20c888be4f8825bbca3a41cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLevel: Die
