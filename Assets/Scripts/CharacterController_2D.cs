@@ -31,6 +31,7 @@ public class CharacterController_2D : MonoBehaviour {
         m_Animator = this.transform.Find("BURLY-MAN_1_swordsman_model").GetComponent<Animator>();
         m_tran = this.transform;
         m_SpriteGroup = this.transform.Find("BURLY-MAN_1_swordsman_model").GetComponentsInChildren<SpriteRenderer>(true);
+        Time.timeScale = 0;
     }
 
     void Awake()
@@ -88,6 +89,22 @@ public class CharacterController_2D : MonoBehaviour {
     // character Move Function
     void Move_Fuc()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!ScoreBoardController.instance.transform.GetChild(9).gameObject.activeInHierarchy)
+            {
+                ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(false);
+                Time.timeScale = 1;
+            }
+        }
+
+        if (Time.timeScale == 0) return;
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
           //  Debug.Log("Left");
@@ -109,13 +126,7 @@ public class CharacterController_2D : MonoBehaviour {
             isJumping = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(!ScoreBoardController.instance.transform.GetChild(9).gameObject.activeInHierarchy)
-                ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(true);
-            else
-                ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(false);
-        }
+        
     }
 
     void Hurt()
