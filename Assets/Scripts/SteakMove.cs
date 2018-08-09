@@ -9,11 +9,9 @@ public class SteakMove : MonoBehaviour {
     Rigidbody2D myBody;
     Transform myTrans;
     float myWidth;
-    Animator m_Animator;
 
     // Use this for initialization
     void Start () {
-        m_Animator = this.transform.GetComponent<Animator>();
         myTrans = this.transform;
         myBody = this.GetComponent<Rigidbody2D>();
         myWidth = this.GetComponent<SpriteRenderer>().bounds.extents.x;
@@ -46,6 +44,6 @@ public class SteakMove : MonoBehaviour {
 
     public void Sword_Hitted()
     {
-        DestroyObject(gameObject);
+        Destroy(gameObject);
     }
 }

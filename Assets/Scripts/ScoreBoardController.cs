@@ -16,12 +16,13 @@ public class ScoreBoardController : MonoBehaviour {
     public static int health = 100;
     public static int scoreCounter = 0;
 
+    public int healthLimit = 100;
+
     // Use this for initialization
     void Start () {
         instance = this;
         healthSlider.value = health;
         scoreCounterText.text = scoreCounter.ToString();
-        
     }
 
     // Update is called once per frame
@@ -36,6 +37,17 @@ public class ScoreBoardController : MonoBehaviour {
 
     public void UpdateHealth(int health)
     {
+        healthSlider.value = health;
+    }
+
+    public void IncreaseHealth(int additionalBlood)
+    {
+        health += additionalBlood;
+        if (health > healthLimit)
+        {
+            health = healthLimit;
+        }
+
         healthSlider.value = health;
     }
 

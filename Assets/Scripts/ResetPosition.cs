@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResetPosition : MonoBehaviour {
 
     public GameObject player;
-    public GameObject camera;
+    public GameObject mainCamera;
 
     Vector3 playerPosition = new Vector3(-1.5f, -2.7f, 0);
     Vector3 cameraPosition = new Vector3(-1.8f, -0.59f, -10);
@@ -25,7 +25,7 @@ public class ResetPosition : MonoBehaviour {
         if (other.gameObject.tag == ("Player"))
         {
             player.transform.position = playerPosition;
-            camera.transform.position = cameraPosition;
+            mainCamera.transform.position = cameraPosition;
         }
     }
 }

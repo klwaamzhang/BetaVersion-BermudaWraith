@@ -6,6 +6,6 @@ public class MushroomBehavior : MonoBehaviour {
 
     public void Sword_Hitted()
     {
-        DestroyObject(gameObject);
+        Destroy(gameObject);
     }
 }

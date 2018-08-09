@@ -39,9 +39,6 @@ public class EnemyFollowPlayer : MonoBehaviour
     //check if the enemy is on ground
     private bool grounded;
 
-    //reference to the player stats object
-    private PlayerStats playerStats;
-
     //check to damage or not the player
     private bool playerDamage = false;
 
@@ -60,10 +57,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         anim = this.GetComponent<Animator>();
         isDead = false;
         relativePlayerTransform = new GameObject().transform;
-        if (player != null)
-        {
-            playerStats = player.GetComponent<PlayerStats>();
-        }
+
         //left point
         leftPoint = new GameObject().transform;
         leftPoint.position = new Vector3(this.transform.position.x - maxTravelDistance, this.transform.position.y, this.transform.position.z);
@@ -125,7 +119,6 @@ public class EnemyFollowPlayer : MonoBehaviour
             if (damageWait >= 1f)
             {
                 Debug.Log("Damaging");
-//                playerStats.Damage(20);
                 damageWait = 0;
             }
             else
@@ -168,6 +161,6 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     public void Sword_Hitted()
     {
-        DestroyObject(gameObject);
+        Destroy(gameObject);
     }
 }
