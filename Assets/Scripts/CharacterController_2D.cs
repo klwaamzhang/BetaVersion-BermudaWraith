@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Reflection;
 
-public class CharacterController_2D : MonoBehaviour {
+public class CharacterController_2D : MonoBehaviour
+{
 
     Rigidbody2D m_rigidbody;
     Animator m_Animator;
@@ -26,7 +27,8 @@ public class CharacterController_2D : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         m_rigidbody = this.GetComponent<Rigidbody2D>();
         m_Animator = this.transform.Find("BURLY-MAN_1_swordsman_model").GetComponent<Animator>();
         m_tran = this.transform;
@@ -37,8 +39,9 @@ public class CharacterController_2D : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
 
         //spriteOrder_Controller();
 
@@ -54,14 +57,14 @@ public class CharacterController_2D : MonoBehaviour {
             StartCoroutine(Attack2WaitSeconds());
         }
 
-        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") || m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Die")||
-            m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Hit")|| m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") || m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Die") ||
+            m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Hit") || m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
             return;
 
         Move_Fuc();
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
-        m_Animator.SetFloat("MoveSpeed", Mathf.Abs(h )+Mathf.Abs (v));
+        m_Animator.SetFloat("MoveSpeed", Mathf.Abs(h) + Mathf.Abs(v));
     }
 
     IEnumerator Attack1WaitSeconds()
@@ -105,14 +108,14 @@ public class CharacterController_2D : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-          //  Debug.Log("Left");
+            //  Debug.Log("Left");
             m_rigidbody.AddForce(Vector2.left * MoveSpeed);
             if (B_FacingRight)
                 Filp();
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-          //  Debug.Log("Right");
+            //  Debug.Log("Right");
             m_rigidbody.AddForce(Vector2.right * MoveSpeed);
             if (!B_FacingRight)
                 Filp();
@@ -122,7 +125,7 @@ public class CharacterController_2D : MonoBehaviour {
         {
             m_rigidbody.AddForce(Vector2.up * jumpPower);
             isJumping = true;
-        }        
+        }
     }
 
     void Hurt()
@@ -132,10 +135,10 @@ public class CharacterController_2D : MonoBehaviour {
         if (ScoreBoardController.health <= 0)
         {
             m_Animator.Play("Die");
-            
+
             StartCoroutine(DieSceneIn2Seconds());
-            
-                   
+
+
         }
         else
         {
@@ -182,8 +185,8 @@ public class CharacterController_2D : MonoBehaviour {
         FlyingBatController bat = collision.gameObject.GetComponent<FlyingBatController>();
 
         if (steak != null || pumpkin != null || mushroom != null || zombie != null || bat != null)
-        {            
-                Hurt();           
+        {
+            Hurt();
         }
 
         if (collision.gameObject.tag == "Ground")
@@ -202,5 +205,10 @@ public class CharacterController_2D : MonoBehaviour {
         theScale.x *= -1;
 
         m_tran.localScale = theScale;
+    }
+
+    void Quit()
+    {
+        Application.Quit();
     }
 }
