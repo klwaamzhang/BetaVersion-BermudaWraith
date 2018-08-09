@@ -31,12 +31,10 @@ public class CharacterController_2D : MonoBehaviour {
         m_Animator = this.transform.Find("BURLY-MAN_1_swordsman_model").GetComponent<Animator>();
         m_tran = this.transform;
         m_SpriteGroup = this.transform.Find("BURLY-MAN_1_swordsman_model").GetComponentsInChildren<SpriteRenderer>(true);
-        Time.timeScale = 0;
-    }
-
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
+        if (SceneManager.GetActiveScene().name == "level1")
+        {
+            Time.timeScale = 0;
+        }
     }
 
 	// Update is called once per frame
@@ -124,9 +122,7 @@ public class CharacterController_2D : MonoBehaviour {
         {
             m_rigidbody.AddForce(Vector2.up * jumpPower);
             isJumping = true;
-        }
-
-        
+        }        
     }
 
     void Hurt()

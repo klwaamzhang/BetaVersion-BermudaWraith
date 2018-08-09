@@ -9,7 +9,6 @@ public class MoveScenes : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("touch");
         if (other.gameObject.tag == ("Player"))
         {
             SceneManager.LoadScene(newLevel);
