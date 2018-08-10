@@ -207,7 +207,7 @@ public class CharacterController_2D : MonoBehaviour
         m_tran.localScale = theScale;
     }
 
-    void Quit()
+    public void Quit()
     {
         Application.Quit();
     }
