@@ -70,7 +70,7 @@ public class CharacterController_2D : MonoBehaviour
     IEnumerator Attack1WaitSeconds()
     {
         Once_Attack = true;
-        Debug.Log("Lclick");
+        //Debug.Log("Lclick");
         m_Animator.SetTrigger("Attack");
         m_rigidbody.velocity = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(0.25f);
@@ -80,7 +80,7 @@ public class CharacterController_2D : MonoBehaviour
     IEnumerator Attack2WaitSeconds()
     {
         Once_Attack = true;
-        Debug.Log("Rclick");
+        //Debug.Log("Rclick");
         m_Animator.SetTrigger("Attack2");
         m_rigidbody.velocity = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(0.25f);
@@ -92,16 +92,8 @@ public class CharacterController_2D : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!ScoreBoardController.instance.transform.GetChild(9).gameObject.activeInHierarchy)
-            {
-                ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(true);
-                Time.timeScale = 0;
-            }
-            else
-            {
-                ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(false);
-                Time.timeScale = 1;
-            }
+            Console.WriteLine("called from escape");
+            Resume();
         }
 
         if (Time.timeScale == 0) return;
@@ -210,5 +202,20 @@ public class CharacterController_2D : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Resume()
+    {
+        Debug.Log(ScoreBoardController.instance.transform.GetChild(9).gameObject.activeInHierarchy);
+        if (!ScoreBoardController.instance.transform.GetChild(9).gameObject.activeInHierarchy)
+        {
+            ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            ScoreBoardController.instance.transform.GetChild(9).gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 }
