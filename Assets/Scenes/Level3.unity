@@ -594,7 +594,7 @@ Prefab:
     - target: {fileID: 114523886461978812, guid: bad7e7ec399975045abb6cc8fa3578a7,
         type: 2}
       propertyPath: MoveSpeed
-      value: 170
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 114523886461978812, guid: bad7e7ec399975045abb6cc8fa3578a7,
         type: 2}
@@ -622,7 +622,7 @@ Prefab:
     - target: {fileID: 114523886461978812, guid: bad7e7ec399975045abb6cc8fa3578a7,
         type: 2}
       propertyPath: jumpPower
-      value: 4000
+      value: 3800
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114044429226193386, guid: bad7e7ec399975045abb6cc8fa3578a7, type: 2}
@@ -6346,7 +6346,7 @@ Prefab:
     - target: {fileID: 114176839293046692, guid: c2ee6ce63751848468f67cf010c818d5,
         type: 2}
       propertyPath: moveSpeed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2ee6ce63751848468f67cf010c818d5, type: 2}
@@ -20654,6 +20654,11 @@ Prefab:
       propertyPath: m_Name
       value: Bat-Red (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 114176839293046692, guid: c2ee6ce63751848468f67cf010c818d5,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2ee6ce63751848468f67cf010c818d5, type: 2}
   m_IsPrefabAsset: 0
@@ -21233,7 +21238,7 @@ Prefab:
     - target: {fileID: 114176839293046692, guid: c2ee6ce63751848468f67cf010c818d5,
         type: 2}
       propertyPath: moveSpeed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2ee6ce63751848468f67cf010c818d5, type: 2}
