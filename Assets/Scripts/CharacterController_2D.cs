@@ -42,8 +42,13 @@ public class CharacterController_2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Console.WriteLine("called from escape");
+            Resume();
+        }
 
-        //spriteOrder_Controller();
+        if (Time.timeScale == 0) return;
 
         if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -52,7 +57,7 @@ public class CharacterController_2D : MonoBehaviour
 
         }
 
-        else if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Mouse0))
+        else if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Mouse1))
         {
             StartCoroutine(Attack2WaitSeconds());
         }
@@ -90,13 +95,6 @@ public class CharacterController_2D : MonoBehaviour
     // character Move Function
     void Move_Fuc()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Console.WriteLine("called from escape");
-            Resume();
-        }
-
-        if (Time.timeScale == 0) return;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {

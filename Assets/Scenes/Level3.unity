@@ -594,7 +594,7 @@ Prefab:
     - target: {fileID: 114523886461978812, guid: bad7e7ec399975045abb6cc8fa3578a7,
         type: 2}
       propertyPath: MoveSpeed
-      value: 120
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 114523886461978812, guid: bad7e7ec399975045abb6cc8fa3578a7,
         type: 2}
@@ -618,6 +618,11 @@ Prefab:
     - target: {fileID: 1563906091518836, guid: bad7e7ec399975045abb6cc8fa3578a7, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114523886461978812, guid: bad7e7ec399975045abb6cc8fa3578a7,
+        type: 2}
+      propertyPath: jumpPower
+      value: 4000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114044429226193386, guid: bad7e7ec399975045abb6cc8fa3578a7, type: 2}
